@@ -13,6 +13,7 @@ group :development, :test do
   gem 'sqlite3',     '~> 1.3.9'
   gem 'byebug',      '~> 3.5.1'
   gem 'pry-byebug',  '~> 2.0.0'
+  gem 'pry-rails',   '~> 0.3.2'
   gem 'web-console', '~> 1.0.4'
   gem 'spring',      '~> 1.1.3'
 end
