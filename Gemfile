@@ -1,14 +1,16 @@
 source 'https://rubygems.org'
 
-gem 'rails',          '~> 4.1.6'
-gem 'bootstrap-sass', '~> 3.2.0.2'
-gem 'bcrypt',         '~> 3.1.7'
-gem 'uglifier',       '~> 2.5.3'
-gem 'sass-rails',     '~> 4.0.3'
-gem 'coffee-rails',   '~> 4.0.0'
-gem 'jquery-rails',   '~> 3.1.2'
-gem 'turbolinks',     '~> 2.4.0'
-gem 'jbuilder',       '~> 2.2.3'
+gem 'rails',                   '~> 4.1.6'
+gem 'bootstrap-sass',          '~> 3.2.0.2'
+gem 'bcrypt',                  '~> 3.1.7'
+gem 'uglifier',                '~> 2.5.3'
+gem 'sass-rails',              '~> 4.0.3'
+gem 'coffee-rails',            '~> 4.0.0'
+gem 'jquery-rails',            '~> 3.1.2'
+gem 'turbolinks',              '~> 2.4.0'
+gem 'jbuilder',                '~> 2.2.3'
+gem 'will_paginate',           '~> 3.0.7'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
 
 
 group :development, :test do
@@ -18,6 +20,7 @@ group :development, :test do
   gem 'pry-rails',   '~> 0.3.2'
   gem 'web-console', '~> 1.0.4'
   gem 'spring',      '~> 1.1.3'
+  gem 'faker',       '~> 1.4.2'
 end
 
 group :test do
