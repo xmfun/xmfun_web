@@ -14,3 +14,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore all assets.
+public/assets
+
+# Ignore all env vars
+.env
+
