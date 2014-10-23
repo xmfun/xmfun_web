@@ -9,6 +9,7 @@ gem 'coffee-rails',            '~> 4.0.0'
 gem 'jquery-rails',            '~> 3.1.2'
 gem 'turbolinks',              '~> 2.4.0'
 gem 'jbuilder',                '~> 2.2.3'
+gem 'dotenv-rails',            '~> 1.0.2'
 gem 'will_paginate',           '~> 3.0.7'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 
@@ -29,6 +30,7 @@ group :test do
 end
 
 group :production do
+  gem 'mysql2', '~> 0.3.16'
   #For heroku
   #gem 'pg',             '~> 0.17.1'
   #gem 'rails_12factor', '~> 0.0.2'
