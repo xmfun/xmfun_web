@@ -2,7 +2,8 @@ require 'open-uri'
 require 'nokogiri'
 require 'cgi'
 require 'json'
-
+#TODO {"query"=>"1"} does not work
+#TODO cancel the search if interval is small
 class Struct
   def to_map
     map = Hash.new

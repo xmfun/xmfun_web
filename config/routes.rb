@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'password_resets/new'
-
+  
   get 'password_resets/edit'
 
   get 'account_activations/edit'
@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
 
+  get 'search/index'
   get '/search/:query' => 'search#search', :as => 'search'
 end

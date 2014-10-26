@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/unity/ractive_assets.git
+  revision: d66ef315f8765b0d9e071b7a2980a6da85c57587
+  specs:
+    ractive_assets (0.0.17)
+      execjs (>= 2.0.2)
+      multi_json
+      sprockets
+      tilt
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -165,6 +175,7 @@ DEPENDENCIES
   nokogiri (~> 1.6.5)
   pry-byebug (~> 2.0.0)
   pry-rails (~> 0.3.2)
+  ractive_assets!
   rails (~> 4.1.6)
   sass-rails (~> 4.0.3)
   spring (~> 1.1.3)

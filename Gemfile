@@ -13,6 +13,7 @@ gem 'dotenv-rails',            '~> 1.0.2'
 gem 'will_paginate',           '~> 3.0.7'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'nokogiri',                '~> 1.6.5'
+gem 'ractive_assets', github: 'unity/ractive_assets'
 
 group :development, :test do
   gem 'sqlite3',     '~> 1.3.9'

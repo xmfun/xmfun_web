@@ -10,4 +10,8 @@ class SearchController < ApplicationController
       #format.json{ render :json => search_result}
     #end
   end
+
+  def index
+
+  end
 end
