@@ -34,23 +34,23 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     assert_select "input#email[name=email][type=hidden][value=?]", user.email
     # Invalid password & confirmation
     patch password_reset_path(user.reset_token),
-      email: user.email,
-      user:  { password:              "foobaz",
-               password_confirmation: "barquux" }
-      assert_select 'div#error_explanation'
-      # Blank password & confirmation
-      patch password_reset_path(user.reset_token),
-        email: user.email,
-        user:  { password:              "",
-                 password_confirmation: "" }
-        assert_not_nil flash.now
-        assert_template 'password_resets/edit'
-        # Valid password & confirmation
-        patch_via_redirect password_reset_path(user.reset_token),
           email: user.email,
-          user: { password:              "foobaz",
-                  password_confirmation: "foobaz" }
-          assert_template 'users/show'
+          user:  { password:              "foobaz",
+                   password_confirmation: "barquux" }
+    assert_select 'div#error_explanation'
+    # Blank password & confirmation
+    patch password_reset_path(user.reset_token),
+          email: user.email,
+          user:  { password:              "",
+                   password_confirmation: "" }
+    assert_not_nil flash.now
+    assert_template 'password_resets/edit'
+    # Valid password & confirmation
+    patch_via_redirect password_reset_path(user.reset_token),
+                       email: user.email,
+                       user: { password:              "foobaz",
+                               password_confirmation: "foobaz" }
+    assert_template 'users/show'
   end
 
   test "expired token" do
@@ -60,11 +60,11 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     @user = assigns(:user)
     @user.update_attribute(:reset_sent_at, 3.hours.ago)
     patch password_reset_path(@user.reset_token),
-      email: @user.email,
-      user: { password:              "foobar",
-              password_confirmation: "foobar" }
-      assert_response :redirect
-      follow_redirect!
-      assert_match /Password reset has expired/i, response.body
+          email: @user.email,
+          user: { password:              "foobar",
+                  password_confirmation: "foobar" }
+    assert_response :redirect
+    follow_redirect!
+    assert_match /Password reset has expired/i, response.body
   end
 end
