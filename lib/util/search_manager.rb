@@ -83,12 +83,13 @@ class ArtistList
   attr_accessor :artist_list
   def initialize(artist_list)
     @artist_list = []
+
     artist_list.each do |div|
       cover   = div.css(".buddy a img")[0]['src']
       link = div.css(".buddy a")[0]['href']
       id = link.split("//").last.split(/(\/|\?)/)[4]
 
-      name  = div.css(".name .title")[0]["title"]
+      name  = div.css("p.name a.title").text
       region = div.css(".name .singer_region").text
 
       @artist_list << Artist.new(id, cover, name, link, region)
@@ -137,7 +138,7 @@ class SearchManager
 
   def self.search(keyword)
     url = "http://www.xiami.com/search?key=#{CGI::escape(keyword)}"
-    search_page = Nokogiri::HTML(open(url, "Client-IP" => "220.181.111.168"))
+    search_page = Nokogiri::HTML(open(url, proxy: "http://111.1.3.38:8000"))
 
     track_list   = search_page.css(".track_list tr")[1..-1]
     album_list   = search_page.css(".albumBlock_list .album_item100_block")
@@ -149,6 +150,7 @@ class SearchManager
 end
 
 #search_result = SearchManager.search("旅行")
+search_result = SearchManager.search("1")
 
 #a = search_result.to_json
 ##File.open("json", 'a') do |f| f.write(a) end
